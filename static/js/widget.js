@@ -1,0 +1,1 @@
+/*here the js code comes that generates the widget */
