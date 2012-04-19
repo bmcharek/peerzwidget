@@ -1,9 +1,8 @@
 <html> 
 
 <head>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js">
-<script type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>
-
+  <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+  
   <title>Testing widgets</title>
 </head>
 
@@ -11,35 +10,7 @@
 <h1>Testing widgets</h1>
 <a href="#" id="createwidget" class="button-1">create widget</a><br><br>
 <textarea id="jswidget" ></textarea>
-
+<script src="{{ STATIC_URL }}js/widget.js"></script>
 
 </body>
-<script type="text/javascript">
-$('#jswidget').hide();
- $("#createwidget").click(function(e) {
-  $('#jswidget').show();
-e.preventDefault();
-$.ajax({
-  type : "GET",
-  url  : "/jsondata/",
-  dataType: 'json',
-  success: function(msg){
-            var pdom = $('<div id="outer"></div>');
-            
-            pdom.append('<h2>Widget page</h2>'); 
-            pdom.append('<div id="mywidget"></div>'); 
-            var script= document.createElement('script');
-            script.type='text/javascript';
-            script.src="http://code.jquery.com/jquery-1.7.1.js";
-            //pdom.prepend( script );
-       console.log(script.outerHTML+ pdom.prop('outerHTML') );
-            $('#jswidget').attr("value",  script.outerHTML + pdom.prop('outerHTML') );
-
-   
-
-  }
-});
-
-});
-</script>
 </html>
