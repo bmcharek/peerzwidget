@@ -15,10 +15,10 @@ def widget(request):#a test view
     return direct_to_template(request, "widget.html") 
 
 import json
-import logging
+##import logging
 def jsondata(request):
     json_data=open('static/greg.json').read()
-    logging.error( json_data )
+    ##logging.error( json_data )
     return HttpResponse( json_data  )
 
 def testwidget(request):#a test view
