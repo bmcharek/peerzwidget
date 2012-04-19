@@ -1,0 +1,31 @@
+<html> 
+
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js">
+<script type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>
+
+  <title>Testing widgets</title>
+</head>
+
+<body bgcolor="white" text="black">
+<h1>Testing widgets</h1>
+<a href="#" id="createwidget" >create widget</a>
+<textarea id="jswidget" style="visibility:hidden;"></textarea>
+<a class="linkedin-profileinsider-popup" href="http://www.linkedin.com/in/besmamcharek">Besma Mcharek</a>
+
+</body>
+<script type="text/javascript">
+//function opentext(){
+ $("#createwidget").click(function(e) {
+e.preventDefault();
+$.ajax({
+  type : "GET",
+  url  : "/widget/",
+success: function(msg){
+   alert (msg);
+  }
+});
+
+});
+</script>
+</html>
