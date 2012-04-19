@@ -1,8 +1,0 @@
-bin
-eggs
-include
-local
-lib
-*.pyc
-*~
-
